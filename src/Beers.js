@@ -25,14 +25,14 @@ const Beers = () => {
   
     return (
       <div className="main">
-        <h2>Beer List</h2>
         <div className='beerList'>
-          {beerList.map((character) => (
-            <Link key={character.id} className="link" to={`/character/${character.id}`}>
-              <BeerCard id={character.id} name={character.name} imageUrl={character.image_url} line={character.tagline} date={character.first_brewed} />
+          {beerList.map((beer) => (
+            <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
+              <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} date={beer.first_brewed} />
             </Link>
           ))}
         </div>
+        <p>Footer</p>
       </div>
     );
   };

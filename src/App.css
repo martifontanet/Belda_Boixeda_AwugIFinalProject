@@ -3,7 +3,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  margin: 10px; 
+  height: 100px;
   pointer-events: none;
 }
 
@@ -15,12 +16,7 @@
 
 .App-header {
   background-color: #23211e;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 2vmin);
   color: white;
 }
 
@@ -35,4 +31,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1{
+  margin: 0;
+  padding-bottom: 30px;
+}
+.beerList{
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.beerList a{
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.beerList a:hover{
+  background-color: #6b6b6b;
+}
+.card img{
+  height: 400px;
+}
+
+.detailcard img{
+  float: left;
+  height: 350px;
+  margin: 0px 100px 100px 100px;
 }
