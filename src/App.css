@@ -54,12 +54,32 @@ h1{
 .beerList a:hover{
   background-color: #6b6b6b;
 }
+
 .card img{
-  height: 400px;
+  height: 350px;
 }
 
 .detailcard img{
   float: left;
   height: 350px;
   margin: 0px 100px 100px 100px;
+}
+
+.link{
+  max-width: 15%;
+  display: block;
+}
+
+.beerList{
+  text-align: center;
+}
+
+.card {
+  max-width: 100%; /* Remove single quotes around 100% */
+  overflow: hidden;
+}
+
+.cardtext {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

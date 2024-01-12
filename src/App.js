@@ -1,15 +1,16 @@
-import Beers from './Beers';
-import BeerDetails from './BeerDetails';
-import SearchList from './SearchList';
 import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
+  Link,
   Route
 } from 'react-router-dom';
 import './App.css';
 import Header from './Header';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import Footer from './Footer';
+import Beers from './Beers';
+import BeerDetails from './BeerDetails';
+import SearchList from './SearchList';
 
 function App() {
   return (
@@ -17,16 +18,15 @@ function App() {
       <div className="App">
         <Header />
         <div className='mainDiv'>
-          <Link to='/beers'>
             <h2>Beer List</h2>
-          </Link>
         </div>
       </div>
       <Switch>
-        <Route exact path="/beers" component={Beers} />
+        <Route exact path="/" component={Beers} />
         <Route path="/beer/:beer_Id" component = {BeerDetails}/>
         <Route path="/search/beers/:searchTerm" component={SearchList}/>
       </Switch>
+      <Footer />
     </Router>
   );
 }
