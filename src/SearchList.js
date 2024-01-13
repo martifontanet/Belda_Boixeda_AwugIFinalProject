@@ -4,6 +4,7 @@ import BeerCard from './BeerCard';
 const SearchResults = ({match}) => {
   const [beerList, setList] = useState([]);
   const searchTerm = match.params.searchTerm;
+  const term = match.params.term;
   
   useEffect(() => {
     const fetchSearch = async () => {
@@ -29,7 +30,7 @@ const SearchResults = ({match}) => {
         
         {beerList.map((beer) => (
             <Link key={beer.id} className="link" to={`/beers/${beer.id}`}>
-              <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} date={beer.first_brewed} />
+              <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
             </Link>
           ))}
           

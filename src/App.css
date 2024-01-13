@@ -1,5 +1,18 @@
+.a{
+  transition: all 0.5s;
+}
+
+.mt{
+  margin-top: 30px;
+}
+p,h1,h2,h3{
+  margin: 0;
+  color: white;
+}
+
 .App {
   text-align: center;
+  transition: all 0.3s;
 }
 
 .App-logo {
@@ -15,9 +28,72 @@
 }
 
 .App-header {
+  display: flex;
+  padding: 20px;
   background-color: #23211e;
   font-size: calc(5px + 2vmin);
   color: white;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.logo{
+  padding-left: 130px;
+  width: 230px;
+}
+
+.logo:hover{
+  width: 231px;
+  opacity: 0.8;
+}
+
+.search{
+  background-color: #373430; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#searchDiv{
+  width: 100%;
+  margin: auto;
+}
+
+.search:hover{
+  background-color: #5d5852; 
+}
+
+.searchBar{
+  width: 20%;
+  background-color: #373430; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor:text;
+}
+
+.searchBar:hover{
+  width: 30%;
+  background-color: #373430;
 }
 
 .App-link {
@@ -33,14 +109,55 @@
   }
 }
 
+
 h1{
   margin: 0;
   padding-bottom: 30px;
+}
+.App{
+  background-color: #333;
+
 }
 .beerList{
   background-color: #333;
   overflow: auto;
   white-space: nowrap;
+}
+
+.card {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.cardtext {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card p,.card h3{
+  color: rgb(158, 158, 158);
+}
+
+.card:hover p,.card:hover h3{
+  color: rgb(255, 255, 255);
+}
+
+.card img{
+  height: 350px;
+}
+
+.detailcard img{
+  float: left;
+  height: 350px;
+  margin: 0px 100px 100px 100px;
+}
+
+.beerList h3{
+  margin-top: 40px;
+}
+
+.content{
+  padding: 50px;
 }
 
 .beerList a{
@@ -55,16 +172,6 @@ h1{
   background-color: #6b6b6b;
 }
 
-.card img{
-  height: 350px;
-}
-
-.detailcard img{
-  float: left;
-  height: 350px;
-  margin: 0px 100px 100px 100px;
-}
-
 .link{
   max-width: 15%;
   display: block;
@@ -74,12 +181,88 @@ h1{
   text-align: center;
 }
 
-.card {
-  max-width: 100%; /* Remove single quotes around 100% */
-  overflow: hidden;
+
+
+footer{
+  background-color: #23211e;
+  text-align: center;
+  padding: 25px;
 }
 
-.cardtext {
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+.button{
+  width: 33%;
+  background-color: #373430; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: #645f58; 
+}
+
+.radioDiv{
+  margin: 0 auto 0 auto;
+  display: inline-block;
+}
+
+.container { 
+  position: relative;
+  padding-left: 35px;
+  margin-left: 50px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
 }

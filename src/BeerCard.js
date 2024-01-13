@@ -8,7 +8,7 @@ class BeerCard extends Component {
           <img src={this.props.imageUrl} alt="charIMG"></img>
           <h3 className="cardtext cardH3">{`${this.props.name}`}</h3>
           <p className="cardtext cardP">{`${this.props.line}`}</p> 
-          {/* <h4 className="vgCardName">{`Status : ${this.props.status}`}</h4>*/}
+          <p className="cardtext cardP">{`ABV : ${this.props.abv}%`}</p>
       </div>
     );
   }

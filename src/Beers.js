@@ -3,51 +3,62 @@ import BeerCard from './BeerCard';
 import { Link, useHistory } from 'react-router-dom';
 
 const Beers = () => {
-    const [beersEndpoint, setKey] = useState('https://api.punkapi.com/v2/beers');
-    const [beerList, setList] = useState([]);
+    const [randList, setRandList] = useState([]);
     const [randNum, setRandomNumbers] = useState([]);
-    const history = useHistory();
+    const [abvList, setAbv] = useState([]);
 
     useEffect(() => {
       const generateRandomNumbers = () => {
-        const newRandomNumbers = Array.from({ length: 4 }, () => Math.floor(Math.random() * 324) + 1);
+        const newRandomNumbers = [];
+    
+        while (newRandomNumbers.length < 4) {
+          const randomNumber = Math.floor(Math.random() * 324) + 1;
+    
+          if (!newRandomNumbers.includes(randomNumber)) { //Verifiquem que no surti cap numero igual per assegurar-nos
+            newRandomNumbers.push(randomNumber);          // que surtiran 4 cerveses i no menys
+          }
+        }
         setRandomNumbers(newRandomNumbers);
       };
-  
       generateRandomNumbers();
-    }, []); // Ejecutar solo una vez al montar el componente
-  
-    useEffect(() => {
-      if (history.location.pathname === '/' && randNum.length === 4) {
-        setKey(`https://api.punkapi.com/v2/beers?ids=${randNum[0]}|${randNum[1]}|${randNum[2]}|${randNum[3]}`);
-      } else {
-        setKey('https://api.punkapi.com/v2/beers');
-      }
-    }, [history.location.pathname, randNum]);
+    }, []);
   
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch(beersEndpoint);
+          const response = await fetch(`https://api.punkapi.com/v2/beers?ids=${randNum[0]}|${randNum[1]}|${randNum[2]}|${randNum[3]}`);
           const data = await response.json();
-          setList(data);
+          setRandList(data);
+
+          const response2 = await fetch(`https://api.punkapi.com/v2/beers?abv_gt=18`);
+          const data2 = await response2.json();
+          setAbv(data2);
+
         } catch (err) {
           console.error(err);
         }
       };
   
       fetchData();
-    }, [beersEndpoint]);
+    }, [randNum]);
   
     return (
       <div className="main">
         <div className='beerList'>
-          {beerList.map((beer) => (
+          <h3>Random Beers</h3>
+          {randList.map((beer) => (
             <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
-              <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} date={beer.first_brewed} />
+              <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
+            </Link>
+          ))}
+          <h3>Beers with the highest ABV</h3>
+          {abvList.map((beer) => (
+            <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
+              <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
             </Link>
           ))}
         </div>
+        <button className='mt button'>View all beers</button>
       </div>
     );
   };

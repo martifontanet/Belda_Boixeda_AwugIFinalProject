@@ -1,17 +1,16 @@
 import React from 'react';
 import Search from './Search';
-import logo from './img/BoixeldaLogo.png';
+import logo from './img/BoixeldaLogoH.png';
 import {
   Link
 } from 'react-router-dom';
 
 function Header() {
   return (
-    <header className="App-header">
+    <header id='head' className="App-header">
         
         <Link className="linkHeader" to="/">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1>Boixelda Beers</h1>
+            <img src={logo} className="logo" alt="logo" />
         </Link>
 
         <Search />
