@@ -5,8 +5,10 @@ class Footer extends Component {
   render() {
     return (
       <footer>
+        <div>
           <p>Juan Carlos Boixeda i Guillem Coll Belda</p>
           <p>AWUG I</p>
+        </div>
       </footer>
     );
   }

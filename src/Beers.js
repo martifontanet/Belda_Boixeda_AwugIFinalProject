@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BeerCard from './BeerCard';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Beers = () => {
     const [randList, setRandList] = useState([]);
@@ -46,19 +46,29 @@ const Beers = () => {
       <div className="main">
         <div className='beerList'>
           <h3>Random Beers</h3>
-          {randList.map((beer) => (
-            <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
-              <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
-            </Link>
-          ))}
+          <div className='beersDiv'>
+            {randList.map((beer) => (
+              <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
+                <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
+              </Link>
+            ))}
+          </div>
+          
+          <br />
           <h3>Beers with the highest ABV</h3>
-          {abvList.map((beer) => (
-            <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
-              <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
-            </Link>
-          ))}
+          <div className='beersDiv'>
+            {abvList.map((beer) => (
+              <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
+                <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
+              </Link>
+            ))}
+          </div>
+          
         </div>
-        <button className='mt button'>View all beers</button>
+        
+        <Link to='/beers/page=1'>
+          <button className='mt a button'>View all beers</button>
+        </Link>
       </div>
     );
   };

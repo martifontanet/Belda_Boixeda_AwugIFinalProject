@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
 .a{
   transition: all 0.5s;
 }
@@ -5,14 +7,30 @@
 .mt{
   margin-top: 30px;
 }
-p,h1,h2,h3{
+
+h2{
   margin: 0;
+}
+
+h3{
+  font-size: 40px;
+}
+p,h1,h2,h3,h4,label,li,ul{
   color: white;
+}
+
+.error{
+  padding: 50px;
+  color: red;
 }
 
 .App {
   text-align: center;
   transition: all 0.3s;
+}
+body{
+  background-color: #23211e;
+  font-family: 'Oswald', sans-serif;
 }
 
 .App-logo {
@@ -23,8 +41,12 @@ p,h1,h2,h3{
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 2s linear;
   }
+}
+
+#head {
+  transition: background-color 0.3s ease, padding 0.3s ease; /* Ajusta la duración según tus preferencias */
 }
 
 .App-header {
@@ -39,6 +61,14 @@ p,h1,h2,h3{
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1000;
+  background-color: #23211ec5; /* Cambia el color de fondo según tus preferencias */
+  padding: 10px 0; /* Ajusta el relleno según tus preferencias */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.low{
+  margin-top: 100px;
 }
 
 .sticky + .content {
@@ -53,6 +83,11 @@ p,h1,h2,h3{
 .logo:hover{
   width: 231px;
   opacity: 0.8;
+}
+
+.link{
+  max-width: 15%;
+  display: block;
 }
 
 .search{
@@ -100,6 +135,14 @@ p,h1,h2,h3{
   color: #61dafb;
 }
 
+.col{
+  background-color:#23211e;
+}
+
+.wi:hover{
+  width: 21%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -109,6 +152,13 @@ p,h1,h2,h3{
   }
 }
 
+.topDiv{
+  padding: 15px;
+  background-color: #d6993f;
+}
+.topDiv h2{
+  color: #23211e;
+}
 
 h1{
   margin: 0;
@@ -120,8 +170,30 @@ h1{
 }
 .beerList{
   background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
+  text-align: center;
+}
+
+.beerList h3{
+  margin-top: 40px;
+}
+
+.beerList a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.beerList a:hover{
+  background-color: #6b6b6b;
+}
+
+.beersDiv{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
@@ -145,54 +217,27 @@ h1{
 .card img{
   height: 350px;
 }
-
-.detailcard img{
-  float: left;
-  height: 350px;
-  margin: 0px 100px 100px 100px;
+.detailcard{
+  display: flex;
 }
-
-.beerList h3{
-  margin-top: 40px;
+.detailcard img{
+  height: 350px;
+  margin: 0px 100px 0 100px;
 }
 
 .content{
   padding: 50px;
 }
 
-.beerList a{
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-}
-
-.beerList a:hover{
-  background-color: #6b6b6b;
-}
-
-.link{
-  max-width: 15%;
-  display: block;
-}
-
-.beerList{
-  text-align: center;
-}
-
-
-
 footer{
   background-color: #23211e;
-  text-align: center;
+  justify-content: center;
   padding: 25px;
 }
 
-
 .button{
-  width: 33%;
-  background-color: #373430; 
+  width: 20%;
+  background-color: #23211e; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -204,65 +249,31 @@ footer{
 }
 
 .button:hover{
-  background-color: #645f58; 
+  background-color: #645f58;
+  width: 25%;
 }
 
-.radioDiv{
-  margin: 0 auto 0 auto;
+.pagBut{
+  width: 8%;
+  background-color: #23211e; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
   display: inline-block;
-}
-
-.container { 
-  position: relative;
-  padding-left: 35px;
-  margin-left: 50px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.container input {
-  position: absolute;
-  opacity: 0;
+  font-size: 16px;
   cursor: pointer;
 }
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 50%;
+.active{
+  background-color: #36342f; 
 }
 
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
+.pagBut:hover{
+  background-color: #36342f; 
+  
 }
 
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.container .checkmark:after {
- 	top: 9px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: white;
+.detailPage{
+  text-align: left;
 }

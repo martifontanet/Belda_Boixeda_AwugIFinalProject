@@ -7,7 +7,7 @@ import {
 
 function Header() {
   return (
-    <header id='head' className="App-header">
+    <header id='head' className="a App-header">
         
         <Link className="linkHeader" to="/">
             <img src={logo} className="logo" alt="logo" />
