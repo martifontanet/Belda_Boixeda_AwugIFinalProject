@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import noimg from './img/noimg.png';
 
 class BeerCard extends Component {
 
@@ -6,7 +7,7 @@ class BeerCard extends Component {
     return (
       <div className="detailcard" id={`beer_${this.props.id}`}>
         <div>
-          <img src={this.props.imageUrl} alt="charIMG"></img>
+          <img src={this.props.imageUrl || noimg} alt="charIMG"></img>
         </div>
         <div>
           <h2 className="cardH3">{`${this.props.name}`}</h2><br />
