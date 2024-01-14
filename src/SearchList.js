@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import BeerCard from './BeerCard';
+import CardPrint from './CardPrint';
 import Loading from './Loading';
 
 const SearchResults = ({ match }) => {
   const [beerList, setList] = useState([]);
   const [loading, setLoading] = useState(true);
   const searchTerm = match.params.searchTerm;
+  const searchTerm2 = match.params.term;
 
   useEffect(() => {
     const fetchSearch = async () => {
       try {
-        const response = await fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`);
+        const response = await fetch(`https://api.punkapi.com/v2/beers?${searchTerm2}=${searchTerm}`);
         const data = await response.json();
         setList(data);
         setLoading(false);
@@ -22,12 +23,12 @@ const SearchResults = ({ match }) => {
     };
 
     fetchSearch();
-  }, [searchTerm]);
+  }, [searchTerm,searchTerm2]);
 
   return (
     <div className="ListPage SearchPage">
       <h3>Search PAGE</h3>
-      <h2>Search term: {searchTerm}</h2>
+      <h4>Search term: <span className='orange'>"{searchTerm}"</span></h4>
       <div>
         <div className="beerList">
           {loading ? (
@@ -36,7 +37,7 @@ const SearchResults = ({ match }) => {
             <div className='beersDiv'>
               {beerList.map((beer) => (
                 <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
-                  <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
+                  <CardPrint key={beer.id} beer={beer} />
                 </Link>
               ))}
             </div>

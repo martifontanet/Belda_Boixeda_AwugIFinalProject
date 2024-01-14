@@ -14,7 +14,6 @@ import BeersList from './BeersList'
 
 function App() {
   useEffect(() => {
-    // This code will run after the component is mounted
     window.onscroll = function() {
       myFunction();
     };
@@ -33,7 +32,6 @@ function App() {
       }
     }
 
-    // Cleanup function to remove the scroll event listener when the component is unmounted
     return () => {
       window.onscroll = null;
     };
@@ -51,7 +49,7 @@ function App() {
           <Route exact path="/" component={Beers} />
           <Route path="/beer/:beer_Id" component = {BeerDetails}/>
           <Route path="/beers/page=:num" component = {BeersList}/>
-          <Route path="/search/beers/:searchTerm" component={SearchList}/>
+          <Route path="/search/beers/:term/:searchTerm" component={SearchList}/>
         </Switch>
       </div>
       <Footer />

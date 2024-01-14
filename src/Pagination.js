@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 
 const Pagination = ({ currentPage, onPageChange }) => {
+  // eslint-disable-next-line
   const [num, setNum] = React.useState(1);
 
   useEffect(() => {
-    // Update the "num" state when the "currentPage" prop changes
     setNum(currentPage);
   }, [currentPage]);
 

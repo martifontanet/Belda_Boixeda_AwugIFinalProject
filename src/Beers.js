@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import BeerCard from './BeerCard';
+import CardPrint from './CardPrint';
 import { Link } from 'react-router-dom';
 
 const Beers = () => {
@@ -49,7 +49,7 @@ const Beers = () => {
           <div className='beersDiv'>
             {randList.map((beer) => (
               <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
-                <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
+                <CardPrint key={beer.id} beer={beer} />
               </Link>
             ))}
           </div>
@@ -59,7 +59,7 @@ const Beers = () => {
           <div className='beersDiv'>
             {abvList.map((beer) => (
               <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
-                <BeerCard id={beer.id} name={beer.name} imageUrl={beer.image_url} line={beer.tagline} abv={beer.abv} />
+                <CardPrint key={beer.id} beer={beer} />
               </Link>
             ))}
           </div>

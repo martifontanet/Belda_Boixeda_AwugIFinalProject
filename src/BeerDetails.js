@@ -38,6 +38,8 @@ const BeerDetails = ({ match }) => {
                 date={beer.first_brewed} 
                 descr={beer.description}
                 abv={beer.abv}
+                ibu={beer.ibu}
+                ebc={beer.ebc}
                 food={beer.food_pairing}
               />
             ))}

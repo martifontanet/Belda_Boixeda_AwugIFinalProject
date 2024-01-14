@@ -19,6 +19,9 @@ p,h1,h2,h3,h4,label,li,ul{
   color: white;
 }
 
+.material-icons{
+  font-size:15px;
+}
 .error{
   padding: 50px;
   color: red;
@@ -206,12 +209,16 @@ h1{
   text-overflow: ellipsis;
 }
 
-.card p,.card h3{
+.card p,.card h4{
   color: rgb(158, 158, 158);
 }
 
-.card:hover p,.card:hover h3{
-  color: rgb(255, 255, 255);
+.card:hover p,.card:hover h4{
+  color: #d6993f;
+}
+
+.orange{
+  color: #d6993f;
 }
 
 .card img{
@@ -221,7 +228,7 @@ h1{
   display: flex;
 }
 .detailcard img{
-  height: 350px;
+  height: 400px;
   margin: 0px 100px 0 100px;
 }
 
@@ -276,4 +283,27 @@ footer{
 
 .detailPage{
   text-align: left;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:#23211e;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.linkcol{
+  color: #c89d28;
 }
