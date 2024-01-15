@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Pagination = ({ currentPage, onPageChange }) => {
   // eslint-disable-next-line
   const [num, setNum] = React.useState(1);
 
+  useEffect(() => {
+    window.scrollTo({ top: 450, behavior: 'smooth' });
+  }, [currentPage]);
   useEffect(() => {
     setNum(currentPage);
   }, [currentPage]);

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from 'react-router-dom';
 import './App.css';
 import Header from './Header';
@@ -10,9 +10,10 @@ import Footer from './Footer';
 import Beers from './Beers';
 import BeerDetails from './BeerDetails';
 import SearchList from './SearchList';
-import BeersList from './BeersList'
+import BeersList from './BeersList';
 
 function App() {
+
   useEffect(() => {
     window.onscroll = function() {
       myFunction();
@@ -38,8 +39,8 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
     <Router>
+    <div className='App'>
       <Header />
       <div id='top' className='topDiv'>
         <h2>Explore and Learn About the best beers!</h2>
@@ -53,8 +54,8 @@ function App() {
         </Switch>
       </div>
       <Footer />
+      </div>
     </Router>
-    </div>
   );
 }
 

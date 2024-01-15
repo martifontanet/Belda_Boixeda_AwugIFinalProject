@@ -22,7 +22,7 @@ const Search = () => {
           <option value='food'>Food pair</option>
         </select>
         <Link to={`/search/beers/${term}/${searchTerm}`}>
-            <button type="submit" className='search searchButton'>Search</button>
+            <button type="submit" className='search searchButton orange2'>Search</button>
         </Link>
         
       </form>

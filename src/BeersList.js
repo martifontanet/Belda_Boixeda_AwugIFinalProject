@@ -27,7 +27,7 @@ const BeersList = () => {
     };
 
     fetchData();
-  }, [num, perPage, abv, ibu, filter1, filter2]);
+  }, [num, perPage, abv, ibu]);
 
   const handlePageClick = (newNum) => {
     setNum(newNum);
@@ -41,21 +41,31 @@ const BeersList = () => {
 
   const filt1Change = (event) => {
     setFilt1(event.target.value);
-    pageOne();
   };
 
   const filt2Change = (event) => {
     setFilt2(event.target.value);
-    pageOne();
   };
 
   const abvChange = (event) => {
+    var but = document.getElementById('abv');
     setAbv(event.target.value);
+    if(event.target.value > 0){
+      but.classList.add('orange2');
+    } else{
+      but.classList.remove('orange2');
+    }
     pageOne();
   };
 
   const ibuChange = (event) => {
+    var but = document.getElementById('ibu');
     setIbu(event.target.value);
+    if(event.target.value > 0){
+      but.classList.add('orange2');
+    } else{
+      but.classList.remove('orange2');
+    }
     pageOne();
   };
 
@@ -74,17 +84,17 @@ const BeersList = () => {
           <option value='abv_gt'>Higher than</option>
           <option value='abv_lt'>Lower than</option>
         </select>
-        <input className='a searchBar col wi' type="number"  min="0" max="55" step="0.5" value={abv} onChange={abvChange} />
+        <input id='abv' className='a searchBar col wi' type="number"  min="0" max="55" step="0.5" value={abv} onChange={abvChange} />
         <br />
         <label>IBU  </label>
-        <select value={filter1} className='search searchButton col' onChange={filt2Change}>
+        <select value={filter2} className='search searchButton col' onChange={filt2Change}>
           <option value='ibu_gt'>Higher than</option>
           <option value='ibu_lt'>Lower than</option>
         </select>
-        <input className='a searchBar col wi' type="number"  min="0" max="100" step="1" value={ibu} onChange={ibuChange} />
+        <input id='ibu' className='a searchBar col wi' type="number"  min="0" max="100" step="1" value={ibu} onChange={ibuChange} />
         <br />
         <label>Beers Per Page  </label>
-        <input className='a searchBar col wi' type="number"  min="1" max="80" step="1" value={perPage} onChange={perPageChange} />
+        <input className='a searchBar col wi orange2' type="number"  min="1" max="80" step="1" value={perPage} onChange={perPageChange} />
         <br />
         <div className='beersDiv'>
           {error ? (

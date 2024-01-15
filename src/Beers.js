@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import CardPrint from './CardPrint';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Beers = () => {
+  const history = useHistory();
+
+  const handleViewAllClick = () => {
+    // Hacer scroll hacia arriba
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Navegar a la página de todas las cervezas
+    history.push('/beers/page=1');
+  };
     const [randList, setRandList] = useState([]);
     const [randNum, setRandomNumbers] = useState([]);
     const [abvList, setAbv] = useState([]);
+    const [darkList, setDark] = useState([]);
 
     useEffect(() => {
       const generateRandomNumbers = () => {
@@ -34,6 +44,13 @@ const Beers = () => {
           const data2 = await response2.json();
           setAbv(data2);
 
+          const response3 = await fetch(`https://api.punkapi.com/v2/beers?ebc_gt=399`);
+          const data3 = await response3.json();
+
+          const sortedDarkList = data3.sort((a, b) => b.ebc - a.ebc); //Ordenem la llista de el ebc mes gran al mes petit
+        
+          const top4DarkBeers = sortedDarkList.slice(0, 4); //Ens quedem amb els 4 més grans
+          setDark(top4DarkBeers);
         } catch (err) {
           console.error(err);
         }
@@ -64,13 +81,24 @@ const Beers = () => {
             ))}
           </div>
           
+          <br />
+          <h3>Darkest Beers</h3>
+          <div className='beersDiv'>
+            {darkList.map((beer) => (
+              <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>
+                <CardPrint key={beer.id} beer={beer} />
+              </Link>
+            ))}
+          </div>
         </div>
         
         <Link to='/beers/page=1'>
-          <button className='mt a button'>View all beers</button>
-        </Link>
-      </div>
-    );
-  };
-  
-  export default Beers;
+        <button onClick={handleViewAllClick} className='mt a button orange2'>
+          View all beers
+        </button>
+      </Link>
+    </div>
+  );
+};
+
+export default Beers;

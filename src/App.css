@@ -217,10 +217,6 @@ h1{
   color: #d6993f;
 }
 
-.orange{
-  color: #d6993f;
-}
-
 .card img{
   height: 350px;
 }
@@ -273,7 +269,7 @@ footer{
   cursor: pointer;
 }
 .active{
-  background-color: #8d7742; 
+  background-color: #705327; 
 }
 
 .pagBut:hover{
@@ -306,4 +302,16 @@ footer{
 
 .linkcol{
   color: #c89d28;
+}
+
+.orange{
+  color: #d6993f;
+}
+
+.orange2{
+  background-color: #705327;
+}
+
+.orange2:hover{
+  background-color: #9e763b;
 }

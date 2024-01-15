@@ -7,7 +7,7 @@ class Footer extends Component {
       <footer>
         <div>
           <p>Juan Carlos Boixeda i Guillem Coll Belda</p>
-          <p>AWUG I</p>
+          <p className='orange'>AWUG I</p>
         </div>
       </footer>
     );
