@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [term, setTerm] = useState('beer name');
+  const [term, setTerm] = useState('beer_name');
 
   const searchTermChange = (event) => {
     setSearchTerm(event.target.value);
