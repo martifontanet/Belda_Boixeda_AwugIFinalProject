@@ -209,7 +209,7 @@ h1{
   text-overflow: ellipsis;
 }
 
-.card p,.card h4{
+.card p{
   color: rgb(158, 158, 158);
 }
 
@@ -304,7 +304,7 @@ footer{
   color: #c89d28;
 }
 
-.orange{
+.orange, .detailcard h2{
   color: #d6993f;
 }
 
@@ -314,4 +314,8 @@ footer{
 
 .orange2:hover{
   background-color: #9e763b;
+}
+
+strong{
+  color: #d9bd78;
 }
