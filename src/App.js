@@ -1,16 +1,12 @@
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import React, { useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
 import './App.css';
-import Header from './Header';
-import Footer from './Footer';
-import Beers from './Beers';
 import BeerDetails from './BeerDetails';
 import SearchList from './SearchList';
 import BeersList from './BeersList';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Beers from './Beers';
 
 function App() {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './img/BoixeldaLogo.png';
+import logo from '../img/BoixeldaLogo.png';
 
 const LoadingComponent = () => (
   <div>

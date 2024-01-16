@@ -1,25 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import Loading from './Loading';
-import DetailCard from './DetailCard';
+import Loading from './components/Loading';
+import DetailCard from './components/DetailCard';
 
 const BeerDetails = ({ match }) => {
   const [loading, setLoading] = useState(true);
   const [beerData, setData] = useState({});
+  const [beerLink, setLink] = useState(`https://api.punkapi.com/v2/beers/${match.params.beer_Id}`);
+
+  const fetchBeer = async () => {
+    try {
+      const response = await fetch(beerLink);
+      const data = await response.json();
+      setData(data);
+      setLoading(false); 
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchBeer = async () => {
-      try {
-        const response = await fetch(`https://api.punkapi.com/v2/beers/${match.params.beer_Id}`);
-        const data = await response.json();
-        setData(data);
-        setLoading(false); 
-      } catch (error) {
-        console.error(error);
-        setLoading(false);
-      }
-    };
     fetchBeer();
   }, [match.params.beer_Id]);
+
+  const [stateUpdated, setStateUpdated] = useState(false);
+
+  useEffect(() => {
+    if (stateUpdated) {
+      fetchBeer();
+      setStateUpdated(false); 
+    }
+    // eslint-disable-next-line
+  }, [stateUpdated]);
+
+  const randomBeer =  () => {
+    setLink('https://api.punkapi.com/v2/beers/random');
+    setStateUpdated(true); 
+  }
 
   return (
     <>
@@ -43,6 +60,11 @@ const BeerDetails = ({ match }) => {
                 food={beer.food_pairing}
               />
             ))}
+          </div>
+          <div>
+            <button onClick={randomBeer} className='mt a button orange2'>
+              Random Beer
+            </button>
           </div>
         </>
       )}

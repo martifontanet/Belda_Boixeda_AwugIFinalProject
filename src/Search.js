@@ -13,6 +13,8 @@ const Search = () => {
     setTerm(event.target.value);
   };
 
+  const isSearchDisabled = !searchTerm.trim();
+
   return (
     <div id="searchDiv">
       <form className=''>
@@ -22,7 +24,7 @@ const Search = () => {
           <option value='food'>Food pair</option>
         </select>
         <Link to={`/search/beers/${term}/${searchTerm}`}>
-            <button type="submit" className='search searchButton orange2'>Search</button>
+        <button type="submit" className={`search searchButton orange2 ${isSearchDisabled ? 'disabled' : ''}`} disabled={isSearchDisabled} >Search</button>
         </Link>
         
       </form>

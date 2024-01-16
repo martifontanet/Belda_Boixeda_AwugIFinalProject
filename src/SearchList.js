@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import CardPrint from './CardPrint';
-import Loading from './Loading';
+import CardPrint from './components/CardPrint';
+import Loading from './components/Loading';
 
 const SearchResults = ({ match }) => {
   const [beerList, setList] = useState([]);

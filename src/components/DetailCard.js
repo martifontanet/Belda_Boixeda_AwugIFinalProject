@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import noimg from './img/noimg.png';
+import noimg from '../img/noimg.png';
 
 class BeerCard extends Component {
 

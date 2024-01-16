@@ -1,6 +1,6 @@
 import React from 'react';
-import Search from './Search';
-import logo from './img/BoixeldaLogoH.png';
+import Search from '../Search';
+import logo from '../img/BoixeldaLogoH.png';
 import {
   Link
 } from 'react-router-dom';

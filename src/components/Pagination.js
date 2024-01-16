@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 
 const Pagination = ({ currentPage, onPageChange }) => {
   // eslint-disable-next-line
