@@ -49,7 +49,7 @@ body{
 }
 
 #head {
-  transition: background-color 0.3s ease, padding 0.3s ease; /* Ajusta la duración según tus preferencias */
+  transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
 .App-header {
@@ -65,8 +65,8 @@ body{
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #23211ec5; /* Cambia el color de fondo según tus preferencias */
-  padding: 10px 0; /* Ajusta el relleno según tus preferencias */
+  background-color: #23211ec5;
+  padding: 10px 0; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

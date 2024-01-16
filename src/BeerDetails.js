@@ -21,6 +21,7 @@ const BeerDetails = ({ match }) => {
 
   useEffect(() => {
     fetchBeer();
+    // eslint-disable-next-line
   }, [match.params.beer_Id]);
 
   const [stateUpdated, setStateUpdated] = useState(false);

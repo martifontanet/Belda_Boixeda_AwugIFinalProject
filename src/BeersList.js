@@ -93,7 +93,7 @@ const BeersList = () => {
   useEffect(() => {
     if (stateUpdated) {
       fetchData();
-      setStateUpdated(false); // Reset the flag
+      setStateUpdated(false);
     }
     // eslint-disable-next-line
   }, [stateUpdated]);
@@ -105,7 +105,7 @@ const BeersList = () => {
     pageOne();
     setFilt1('abv_gt');
     setFilt2('ibu_gt');
-    setStateUpdated(true); // Set the flag to trigger fetchData
+    setStateUpdated(true); 
   };
 
   const filterByTextClick = () => {
