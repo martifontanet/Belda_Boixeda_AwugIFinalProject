@@ -1,5 +1,3 @@
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import React, { useEffect } from 'react';
 import './App.css';
 import BeerDetails from './BeerDetails';
 import SearchList from './SearchList';
@@ -7,6 +5,8 @@ import BeersList from './BeersList';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Beers from './Beers';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import React, { useEffect } from 'react';
 
 function App() {
 
@@ -17,14 +17,14 @@ function App() {
 
     var header = document.getElementById("head");
     var top = document.getElementById("top");
-    var sticky = header.offsetTop;
+    var heady = header.offsetTop;
     
     function myFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
+      if (window.pageYOffset > heady) {
+        header.classList.add("heady");
         top.classList.add("low");
       } else {
-        header.classList.remove("sticky");
+        header.classList.remove("heady");
         top.classList.remove("low");
       }
     }
@@ -41,7 +41,7 @@ function App() {
       <div id='top' className='topDiv'>
         <h2>Explore and Learn About the best beers!</h2>
       </div>
-      <div className='content'>
+      <div className='matter'>
         <Switch>
           <Route exact path="/" component={Beers} />
           <Route path="/beer/:beer_Id" component = {BeerDetails}/>

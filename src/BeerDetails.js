@@ -45,7 +45,7 @@ const BeerDetails = ({ match }) => {
         <Loading />
       ) : (
         <>
-          <div className='detailPage'>
+          <div className='details'>
             {beerData.map((beer) => (
               <DetailCard 
                 key={beer.id}

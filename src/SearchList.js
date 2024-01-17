@@ -26,7 +26,7 @@ const SearchResults = ({ match }) => {
   }, [searchTerm,searchTerm2]);
 
   return (
-    <div className="ListPage SearchPage">
+    <div className="SearchPage">
       <h3>Search PAGE</h3>
       <h4>Search term: <span className='orange'>"{searchTerm}"</span></h4>
       <div>
@@ -42,7 +42,7 @@ const SearchResults = ({ match }) => {
               ))}
             </div>
           ) : (
-            <p className='error'>No se obtuvieron resultados.</p>
+            <p className='err'>No se obtuvieron resultados.</p>
           )}
         </div>
       </div>

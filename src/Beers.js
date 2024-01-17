@@ -60,7 +60,7 @@ const Beers = () => {
   }, [randNum]);
 
   return (
-    <div className="main">
+    <div>
       <div className='beerList'>
       <Link id='view' to='/beers/page=1'>
         <p  onClick={handleViewAllClick} className='a orange'> View all beers <i className={`material-icons`}>arrow_forward</i> </p>

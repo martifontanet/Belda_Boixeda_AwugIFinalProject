@@ -9,7 +9,7 @@ function Header() {
   return (
     <header id='head' className="a App-header">
         
-        <Link className="linkHeader" to="/">
+        <Link to="/">
             <img src={logo} className="logo" alt="logo" />
         </Link>
 

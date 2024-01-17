@@ -10,9 +10,9 @@ class BeerCard extends Component {
           <img src={this.props.imageUrl || noimg} alt="charIMG"></img>
         </div>
         <div>
-          <h2 className="cardH3">{`${this.props.name}`}</h2><br />
+          <h2 className="">{`${this.props.name}`}</h2><br />
           <p><strong>Brewed Date:</strong> {`${this.props.date}`}</p>
-          <p className="cardP"><strong>TagLine:</strong> {`${this.props.line}`}</p> 
+          <p className=""><strong>TagLine:</strong> {`${this.props.line}`}</p> 
           <p><strong>Description:</strong> {`${this.props.descr}`}</p>
           <div className='dropdown'>
             <p><i class="material-icons">help_outline</i> <strong>ABV:</strong> {`${this.props.abv}`}%  </p>

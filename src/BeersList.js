@@ -113,36 +113,36 @@ const BeersList = () => {
   };
 
   return (
-    <div className="main">
+    <div >
       <div className='beerList'>
         <h3>Beers List</h3>
         <h4 className='filter' onClick={filterByTextClick}>Filter by:<i className={` material-icons ${showDropbox ? 'visible' : 'hidden'}`}>arrow_upward</i><i className={` material-icons ${showDropbox ? 'hidden' : 'visible'}`}>arrow_downward</i></h4>
         <div className={`a dropbox ${showDropbox ? 'visible' : 'hidden'}`}>
           <label>ABV  </label>
-          <select value={filter1} className='search searchButton col' onChange={filt1Change}>
+          <select value={filter1} className='search searchBu col' onChange={filt1Change}>
             <option value='abv_gt'>Higher than</option>
             <option value='abv_lt'>Lower than</option>
           </select>
-          <input id='abv' className='a searchBar col wi' type="number"  min="0" max="55" step="0.5" value={abv} onChange={abvChange} />
+          <input id='abv' className='a searchB col wi' type="number"  min="0" max="55" step="0.5" value={abv} onChange={abvChange} />
           <br />
           <label>IBU  </label>
-          <select value={filter2} className='search searchButton col' onChange={filt2Change}>
+          <select value={filter2} className='search searchBu col' onChange={filt2Change}>
             <option value='ibu_gt'>Higher than</option>
             <option value='ibu_lt'>Lower than</option>
           </select>
-          <input id='ibu' className='a searchBar col wi' type="number"  min="0" max="100" step="1" value={ibu} onChange={ibuChange} />
+          <input id='ibu' className='a searchB col wi' type="number"  min="0" max="100" step="1" value={ibu} onChange={ibuChange} />
           <br />
           <label>Beers Per Page  </label>
-          <input id='perPage' className='a searchBar col wi' type="number"  min="25" max="80" step="1" value={perPage} onChange={perPageChange} />
+          <input id='perPage' className='a searchB col wi' type="number"  min="25" max="80" step="1" value={perPage} onChange={perPageChange} />
           <br />
-          <button type="submit" className='search searchButton' onClick={clear}>Clear</button>
-          <button type="submit" className='search searchButton orange2' onClick={filter}>Filter</button>
+          <button type="submit" className='search searchBu' onClick={clear}>Clear</button>
+          <button type="submit" className='search searchBu orange2' onClick={filter}>Filter</button>
         </div>
         <div className='beersDiv'>
           {error ? (
             <p>{error}</p>
           ) : beersList.length === 0 ? (
-            <p className='error'>No results found.</p>
+            <p className='err'>No results found.</p>
           ) : (
             beersList.map((beer) => (
               <Link key={beer.id} className="link" to={`/beer/${beer.id}`}>

@@ -22,7 +22,7 @@ p,h1,h2,h3,h4,label,li,ul{
 .material-icons{
   font-size:15px;
 }
-.error{
+.err{
   padding: 50px;
   color: red;
 }
@@ -60,7 +60,7 @@ body{
   color: white;
 }
 
-.sticky {
+.heady {
   position: fixed;
   top: 0;
   width: 100%;
@@ -74,7 +74,7 @@ body{
   margin-top: 100px;
 }
 
-.sticky + .content {
+.heady + .matter {
   padding-top: 102px;
 }
 
@@ -115,7 +115,7 @@ body{
   background-color: #5d5852; 
 }
 
-.searchBar{
+.searchB{
   width: 25%;
   background-color: #373430; 
   border: none;
@@ -129,7 +129,7 @@ body{
   cursor:text;
 }
 
-.searchBar:hover{
+.searchB:hover{
   width: 30%;
   background-color: #373430;
 }
@@ -233,7 +233,7 @@ h1{
   margin: 0px 100px 0 100px;
 }
 
-.content{
+.matter{
   padding: 50px;
 }
 
@@ -282,7 +282,7 @@ footer{
   
 }
 
-.detailPage{
+.details{
   text-align: left;
 }
 

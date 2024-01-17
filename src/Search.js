@@ -18,13 +18,13 @@ const Search = () => {
   return (
     <div id="searchDiv">
       <form className=''>
-        <input className='a searchBar' type="text"  placeholder={`Search beers by ${term}`} value={searchTerm} onChange={searchTermChange} />
-        <select value={term} className='search searchButton' onChange={termChange}>
+        <input className='a searchB' type="text"  placeholder={`Search beers by ${term}`} value={searchTerm} onChange={searchTermChange} />
+        <select value={term} className='search searchBu' onChange={termChange}>
           <option value='beer_name'>Beer name</option>
           <option value='food'>Food pair</option>
         </select>
         <Link to={`/search/beers/${term}/${searchTerm}`}>
-        <button type="submit" className={`search searchButton orange2 ${isSearchDisabled ? 'disabled' : ''}`} disabled={isSearchDisabled} >Search</button>
+        <button type="submit" className={`search searchBu orange2 ${isSearchDisabled ? 'disabled' : ''}`} disabled={isSearchDisabled} >Search</button>
         </Link>
         
       </form>
