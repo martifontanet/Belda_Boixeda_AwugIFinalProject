@@ -26,9 +26,9 @@ const SearchResults = ({ match }) => {
   }, [searchTerm,searchTerm2]);
 
   return (
-    <div className="SearchPage">
+    <div className="">
       <h3>Search PAGE</h3>
-      <h4>Search term: <span className='orange'>"{searchTerm}"</span></h4>
+      <h4>Searching by: <span className='orange'>"{searchTerm}"</span></h4>
       <div>
         <div className="beerList">
           {loading ? (
